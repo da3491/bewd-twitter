@@ -1,11 +1,11 @@
 class Session < ApplicationRecord
-    belongs_to :user
+  belongs_to :user
 
-    before_validation :generate_session_token
+  before_validation :generate_session_token
 
-    private
+  private
 
-    def generate_session_token
-        self.token = SecureRandom.urlsafe_base64
-    end
+  def generate_session_token
+    self.token = SecureRandom.urlsafe_base64
+  end
 end
